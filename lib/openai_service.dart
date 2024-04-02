@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-
+import 'package:chat_bot/secrets.dart';
 import 'package:http/http.dart' as http;
 
 class OpenAIService {
@@ -12,7 +12,7 @@ class OpenAIService {
         Uri.parse('https://api.openai.com/v1/chat/completions'),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer $openAIAPIKey',
         },
         body: jsonEncode({
           "model": "gpt-3.5-turbo",
@@ -59,7 +59,7 @@ class OpenAIService {
         Uri.parse('https://api.openai.com/v1/chat/completions'),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer $openAIAPIKey',
         },
         body: jsonEncode({
           "model": "gpt-3.5-turbo",
@@ -94,7 +94,7 @@ class OpenAIService {
         Uri.parse('https://api.openai.com/v1/images/generations'),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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',
+          'Authorization': 'Bearer $openAIAPIKey',
         },
         body: jsonEncode({
           'prompt': prompt,
